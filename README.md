@@ -4,12 +4,10 @@ Simulation code and figures accompanying the manuscript submitted to *Biological
 
 ## Contents
 
-- `asymmetric_cusp_simulation.py` — Simulation 1: asymmetric cusp phase diagram (produces fig1)
-- `trajectories_simulation.py` — Simulation 2: example trajectories (produces fig2)
-- `sensitivity_analysis.py` — Simulation 3: parameter sensitivity analysis (produces fig3)
-- `fig1_phase_diagram.png` — Asymmetric cusp phase diagram
-- `fig2_trajectories.png` — Example trajectories
-- `fig3_sensitivity.png` — Sensitivity analysis heatmap
+- `folie_simulations.py` — All three simulations (asymmetric cusp phase diagram, example trajectories, sensitivity analysis)
+- `fig1_phase_diagram.png` — Asymmetric cusp phase diagram (Figure 1)
+- `fig2_trajectories.png` — Example trajectories (Figure 2)
+- `fig3_sensitivity.png` — Sensitivity analysis heatmap (Figure 3)
 
 ## Requirements
 
