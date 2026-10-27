@@ -1,0 +1,57 @@
+A. Symmetric coupling, no anchor (P = 0): which variable tips?
+   K=0.3: 1 stable (integration finds 1): ['shared +0.000000, gap +0.0e+00'] | predicted shared +/-0.000000
+   K=0.45: 1 stable (integration finds 1): ['shared +0.000000, gap +0.0e+00'] | predicted shared +/-0.000000
+   K=0.6: 2 stable (integration finds 2): ['shared -0.316228, gap -2.8e-17', 'shared +0.316228, gap +0.0e+00'] | predicted shared +/-0.316228
+   K=0.8: 2 stable (integration finds 2): ['shared -0.547723, gap +0.0e+00', 'shared +0.547723, gap +0.0e+00'] | predicted shared +/-0.547723
+   K=1.0: 2 stable (integration finds 2): ['shared -0.707107, gap +5.6e-17', 'shared +0.707107, gap +0.0e+00'] | predicted shared +/-0.707107
+
+A2. Threshold with the anchor at m = 0 (E = 0.5, P = 0.2)
+   exact K_c = sqrt(E(E+P)) = 0.591608; reduced (r = 0) K = E + P/2 = 0.600000; series E + P/2 - P^2/(8E) = 0.590000
+   K=0.5866: largest baseline eigenvalue -0.00493, 1 stable state(s)
+   K=0.5966: largest baseline eigenvalue +0.00493, 2 stable state(s)
+   K=0.5990: largest baseline eigenvalue +0.00729, 2 stable state(s)
+
+A3. Nonhyperbolic test case: E = K = 0.5, P = 0 (exactly at the threshold)
+   equilibrium (+0.000000,+0.000000): eigenvalues [-1.00000000e+00  1.11022302e-16], classified nonhyperbolic
+   linear analysis is inconclusive here; along the shared direction s' = -s^3, so the origin is stable but slow: from (0.1, 0.1), shared belief after t = 400 is 0.0333 (s' = -s^3 predicts 0.0333)
+
+B. Anchored model (E = 0.5, K = 1.2, P = 0.2): full model vs reduced cusp
+   m=0.00: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.7755 gap +0.0215; shared +0.7755 gap -0.0215
+   m=0.30: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.7492 gap +0.0301; shared +0.7992 gap -0.0134
+   m=0.60: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.7193 gap +0.0393; shared +0.8208 gap -0.0058
+   m=1.00: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.6712 gap +0.0530; shared +0.8471 gap +0.0039
+   m=1.40: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.6046 gap +0.0691; shared +0.8711 gap +0.0130
+   m=1.76: full 2 stable of 3 equilibria, 0 nonhyperbolic (integration finds 2), reduced predicts 2; shared -0.4661 gap +0.0905; shared +0.8910 gap +0.0208
+   m=1.78: full 1 stable of 1 equilibria, 0 nonhyperbolic (integration finds 1), reduced predicts 2; shared +0.8921 gap +0.0212
+   m=1.80: full 1 stable of 1 equilibria, 0 nonhyperbolic (integration finds 1), reduced predicts 1; shared +0.8931 gap +0.0216
+   m=2.00: full 1 stable of 1 equilibria, 0 nonhyperbolic (integration finds 1), reduced predicts 1; shared +0.9036 gap +0.0258
+   m=0 positive state (+0.753977,+0.797004): shared 0.775491, gap -0.021514; reduced sqrt(r) = 0.774597
+   first-order gap estimate P(m - s)/(2(E+K+3s^2)) = -0.022131
+   the anchor generally opens a gap, but not always: at m = sqrt(K - E) = 0.836660 the point q_p = q_s = m has residual 1.1e-16, gap 0, classified stable
+
+B2. Exact fold of the full model vs the reduced prediction
+   exact fold (qp, qs, m) = (-0.34849988, -0.53320732, 1.76786401), residual 2.2e-16
+   reduced fold |h| = 2(r/3)^1.5 -> |m| = 1.78885438; difference 1.19%
+   m = 1.78: full model 1 stable, reduced 2 stable
+   m = fold + 1e-5 = 1.76787401: full model 1 stable (integration with residual check finds 1)
+
+C. Unequal coupling
+   P=0: Kp=0.9, Ks=0.3: sqrt(Kp*Ks)=0.520 vs E=0.5 -> 2 stable: (-0.100631,-0.171115); (+0.100631,+0.171115)
+   P=0: Kp=1.2, Ks=0.0: sqrt(Kp*Ks)=0.000 vs E=0.5 -> 1 stable: (+0.000000,+0.000000)
+   P=0: Kp=0.6, Ks=0.6: sqrt(Kp*Ks)=0.600 vs E=0.5 -> 2 stable: (-0.316228,-0.316228); (+0.316228,+0.316228)
+   P=0.2, m=0: Kp*Ks=0.342 vs E(E+P)=0.350: largest baseline eigenvalue -0.00670, 1 stable
+   P=0.2, m=0: Kp*Ks=0.360 vs E(E+P)=0.350: largest baseline eigenvalue +0.00828, 2 stable
+   one-way influence (Kp = 1.2, Ks = 0) with an anchor: number of equilibria and tracking
+     m=0.5: 1 equilibrium; qs = +0.2866, linear tracking (Kp/E) qp = +0.3336
+     m=2.0: 1 equilibrium; qs = +0.6115, linear tracking (Kp/E) qp = +1.0687
+     m=5.0: 1 equilibrium; qs = +0.8058, linear tracking (Kp/E) qp = +1.8523
+
+D. Hysteresis sweeps of m (E = 0.5, K = 1.2, P = 0.2); the true fold is at |m| = 1.7679
+   step 0.1, time 60 per step: jump up at m = +1.80, down at m = -1.80
+   step 0.01, time 60 per step: jump up at m = +1.78, down at m = -1.78
+   step 0.01, time 400 per step: jump up at m = +1.77, down at m = -1.77
+   detector check on a sweep with no jump (m 1.0 to 1.5): None
+
+E. Separation as treatment: cut coupling to K=0 from a locked state
+   locked (primary, secondary) = (+0.850952,+0.843215); after separation = (+0.260469,+0.000000); primary's exact resting point 0.260469
+   the secondary returns to baseline at rate E; the primary settles where their own conviction balances external precision
